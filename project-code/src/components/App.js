@@ -3,7 +3,7 @@ import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
 import { useEffect } from "react";
 import { connect } from "react-redux";
-import Login from "./Login";
+import Dashboard from "./Dashboard";
 
 const App = (props) => {
   useEffect(() => {
@@ -13,9 +13,8 @@ const App = (props) => {
   return (
     <div>
       <LoadingBar />
-      <Login />
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route exact path="/" element={<Dashboard id={props.loginUser} />} />
       </Routes>
     </div>
   );
@@ -23,6 +22,7 @@ const App = (props) => {
 
 const mapStateToProps = ({ loginUser }) => ({
   loading: loginUser === null,
+  loginUser,
 });
 
 export default connect(mapStateToProps)(App);

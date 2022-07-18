@@ -1,11 +1,20 @@
+import { useState } from "react";
 import { connect } from "react-redux";
+import { setLoginUser } from "../actions/loginUser";
 
-const Login = ({ users }) => {
+const Login = (props) => {
+  const [user, setUser] = useState();
+  const handleChange = (e) => {
+    setUser(e.target.value);
+  };
+  const handleLogin = () => {
+    props.dispatch(setLoginUser(user));
+  };
   return (
     <div>
-      <select>
-        {users
-          ? users.map((user) => {
+      <select onChange={handleChange}>
+        {props.users
+          ? props.users.map((user) => {
               return (
                 <option key={user} value={user}>
                   {user}
@@ -14,7 +23,7 @@ const Login = ({ users }) => {
             })
           : ""}
       </select>
-      <button>Login</button>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 };
