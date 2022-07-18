@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { handleGetUsers } from "../actions/users";
+import { handleInitialData } from "../actions/shared";
 import LoadingBar from "react-redux-loading-bar";
 import { useEffect } from "react";
 import { connect } from "react-redux";
@@ -7,8 +7,8 @@ import Login from "./Login";
 
 const App = (props) => {
   useEffect(() => {
-    props.dispatch(handleGetUsers());
-  }, []);
+    props.dispatch(handleInitialData());
+  }, [props]);
 
   return (
     <div>

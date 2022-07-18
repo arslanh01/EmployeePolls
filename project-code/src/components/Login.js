@@ -1,5 +1,28 @@
-const Login = () => {
-  return <div>Login</div>;
+import { connect } from "react-redux";
+
+const Login = ({ users }) => {
+  return (
+    <div>
+      <select>
+        {users
+          ? users.map((user) => {
+              return (
+                <option key={user} value={user}>
+                  {user}
+                </option>
+              );
+            })
+          : ""}
+      </select>
+      <button>Login</button>
+    </div>
+  );
 };
 
-export default Login;
+const mapStateToProps = ({ users }) => {
+  return {
+    users: Object.keys(users),
+  };
+};
+
+export default connect(mapStateToProps)(Login);
