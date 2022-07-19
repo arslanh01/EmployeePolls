@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setLoginUser } from "../actions/loginUser";
 
 const Login = (props) => {
+  console.log(props);
   const [user, setUser] = useState();
   const handleChange = (e) => {
     setUser(e.target.value);

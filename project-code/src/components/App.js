@@ -4,6 +4,7 @@ import LoadingBar from "react-redux-loading-bar";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import Dashboard from "./Dashboard";
+import Login from "./Login";
 
 const App = (props) => {
   useEffect(() => {
@@ -13,9 +14,13 @@ const App = (props) => {
   return (
     <div>
       <LoadingBar />
-      <Routes>
-        <Route exact path="/" element={<Dashboard id={props.loginUser} />} />
-      </Routes>
+      {props.loginUser ? (
+        <Routes>
+          <Route exact path="/" element={<Dashboard />} />
+        </Routes>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 };
