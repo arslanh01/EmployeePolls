@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
+import Poll from "./Poll";
 
 const App = (props) => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const App = (props) => {
       {props.loginUser ? (
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
+          <Route exact path="/questions/:question_id" element={<Poll />} />
         </Routes>
       ) : (
         <Login />
