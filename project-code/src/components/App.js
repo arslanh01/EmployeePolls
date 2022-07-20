@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
 import Poll from "./Poll";
+import Leaderboard from "./Leaderboard";
+import NewPoll from "./NewPoll";
 
 const App = (props) => {
   useEffect(() => {
@@ -18,7 +20,9 @@ const App = (props) => {
       {props.loginUser ? (
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
-          <Route exact path="/questions/:question_id" element={<Poll />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/add" element={<NewPoll />} />
+          <Route path="/questions/:question_id" element={<Poll />} />
         </Routes>
       ) : (
         <Login />

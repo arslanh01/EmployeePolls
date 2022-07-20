@@ -35,7 +35,11 @@ const Dashboard = (props) => {
 
 const mapStateToProps = ({ loginUser, users, questions }) => {
   const user = users[loginUser];
-  const answeredQuestions = user ? Object.keys(users[loginUser].answers) : null;
+  const answeredQuestions = user
+    ? Object.keys(users[loginUser].answers).sort(
+        (a, b) => questions[b].timestamp - questions[a].timestamp
+      )
+    : null;
   return {
     user,
     answeredQuestions,
