@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { connect } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Nav from "./Nav";
 import { handleSaveAnswer } from "../actions/questions";
 
 const Poll = (props) => {
   const [selection, setSelection] = useState("");
-  const navigate = useNavigate();
   const { question_id } = useParams();
   const { questions, users, loginUser } = props;
   const question = questions[question_id];
   if (question === undefined) {
-    navigate("/404");
+    return <Navigate to="/404" />;
   }
   const votes = [...question.optionOne.votes, ...question.optionTwo.votes];
   const answered = votes.includes(loginUser);
