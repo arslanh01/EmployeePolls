@@ -10,7 +10,8 @@ import { createRoot } from "react-dom/client";
 
 const store = createStore(reducer, middleware);
 
-const root = createRoot(document.getElementById("root"));
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 
 root.render(
   <Provider store={store}>
