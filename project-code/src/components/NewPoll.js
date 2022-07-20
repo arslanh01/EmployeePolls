@@ -17,10 +17,13 @@ const NewPoll = (props) => {
     <div>
       <Nav />
       <div className="center">
-        <h3>Create New Poll</h3>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6YgVdiri5_i7bXRYoV9qfmazwE6gWAskuFA&usqp=CAU"
+          alt="create-poll"
+        />
         <div>
           <h3>Would You Rather?</h3>
-          <form>
+          <form data-testid="create-form">
             <input
               type="text"
               placeholder="Enter first option"
@@ -29,6 +32,7 @@ const NewPoll = (props) => {
               }}
             />
             <br />
+            <br />
             <input
               type="text"
               placeholder="Enter second option"
@@ -36,6 +40,7 @@ const NewPoll = (props) => {
                 setOptionTwo(e.target.value);
               }}
             />
+            <br />
             <br />
             <input
               type="submit"

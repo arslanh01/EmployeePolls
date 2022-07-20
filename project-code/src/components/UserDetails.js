@@ -9,7 +9,7 @@ const UserDetails = (props) => {
         <h3>{user.name}</h3>
       </div>
       <div className="center">
-        <h5>Question Asked</h5>
+        <h5>Questions Asked</h5>
         <h3>{user.questions.length}</h3>
       </div>
       <div className="center">

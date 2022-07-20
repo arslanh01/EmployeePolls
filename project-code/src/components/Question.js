@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 const Question = (props) => {
   const { id } = props.question;
   return (
-    <Link to={`/questions/${id}`} className="tweet">
-      <img
-        src={props.avatar}
-        alt={`Avatar of ${props.author}`}
-        className="avatar"
-      />
-      <div className="tweet-info">
-        <span>{props.author}</span>
+    <Link to={`/questions/${id}`}>
+      <div className="question-detail">
+        <div>
+          <img
+            src={props.avatar}
+            alt={`Avatar of ${props.author}`}
+            className="avatar"
+          />
+          <h3>{props.author}</h3>
+        </div>
         <div>
           {new Date(props.timestamp).toLocaleTimeString()}{" "}
           {new Date(props.timestamp).toLocaleDateString()}{" "}

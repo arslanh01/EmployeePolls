@@ -8,9 +8,10 @@ import middleware from "./middleware";
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
-const store = createStore(reducer, middleware);
+export const store = createStore(reducer, middleware);
 
-const rootElement = document.getElementById("root");
+const rootElement =
+  document.getElementById("root") || document.createElement("div");
 const root = createRoot(rootElement);
 
 root.render(

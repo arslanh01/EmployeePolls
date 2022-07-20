@@ -7,7 +7,12 @@ const Leaderboard = (props) => {
   return (
     <div>
       <Nav />
-      <h3 className="center">Leaderboard</h3>
+      <div className="center">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgve9Zfmk_Obf8covSDFPtZVYR7iHN79pr_w&usqp=CAU"
+          alt="leaderboard"
+        />
+      </div>
       {sortedUsers.map((id) => {
         return <UserDetails key={id} id={id} />;
       })}

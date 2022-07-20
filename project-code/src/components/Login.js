@@ -4,7 +4,7 @@ import { setLoginUser } from "../actions/loginUser";
 
 const Login = (props) => {
   console.log(props);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState("");
   const handleChange = (e) => {
     setUser(e.target.value);
   };
@@ -12,8 +12,16 @@ const Login = (props) => {
     props.dispatch(setLoginUser(user));
   };
   return (
-    <div>
-      <select onChange={handleChange}>
+    <div className="center">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Mclb0NdAfReSwkqWDtxIh2Oc4vEyPMYzeg&usqp=CAU"
+        alt="login"
+      />
+      <br />
+      <h3>Please login as a user to continue</h3>
+      <br />
+      <select onChange={handleChange} data-testid="select">
+        <option value="None"></option>
         {props.users
           ? props.users.map((user) => {
               return (
@@ -24,7 +32,11 @@ const Login = (props) => {
             })
           : ""}
       </select>
-      <button onClick={handleLogin}>Login</button>
+      <br />
+      <br />
+      <button onClick={handleLogin} disabled={user === ""} data-testid="login">
+        Login
+      </button>
     </div>
   );
 };

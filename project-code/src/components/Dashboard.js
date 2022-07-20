@@ -18,9 +18,14 @@ const Dashboard = (props) => {
       <div>
         <Nav />
         <div className="center">
-          <img src={props.user.avatarURL} alt="Avatar" className="avatar" />
+          <img
+            src={props.user.avatarURL}
+            data-testid="avatar"
+            alt="Avatar"
+            className="avatar"
+          />
           <h3>{props.user.name}</h3>
-          <button onClick={handleToggle}>
+          <button onClick={handleToggle} data-testid="toggler">
             Show {answered ? "unanswered" : "answered"} Polls
           </button>
           {!answered ? (
