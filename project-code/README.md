@@ -8,7 +8,7 @@ This is a web app created for the final project of Udacity React Nanodegree Prog
 - Redux
 - Routing
 
-$$ QuickStart
+## QuickStart
 
 To get this application in up and running state, perform the following steps:
 
