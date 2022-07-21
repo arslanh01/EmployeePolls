@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setLoginUser } from "../actions/loginUser";
 
 const Nav = (props) => {
+  const navigate = useNavigate();
   const handleLogout = () => {
     props.dispatch(setLoginUser(null));
+    navigate("/");
   };
   return (
     <nav className="nav" data-testid="navbar">

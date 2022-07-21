@@ -1,15 +1,21 @@
 import { useState } from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { setLoginUser } from "../actions/loginUser";
 
 const Login = (props) => {
+  const navigate = useNavigate();
   console.log(props);
   const [user, setUser] = useState("");
   const handleChange = (e) => {
+    console.log(window.location);
     setUser(e.target.value);
   };
   const handleLogin = () => {
     props.dispatch(setLoginUser(user));
+    if (window.location.pathname === "/") {
+      navigate("/");
+    }
   };
   return (
     <div className="center">
