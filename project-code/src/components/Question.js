@@ -6,12 +6,12 @@ const Question = (props) => {
   return (
     <Link to={`/questions/${id}`}>
       <div className="question-detail">
+        <img
+          src={props.avatar}
+          alt={`Avatar of ${props.author}`}
+          className="avatar"
+        />
         <div>
-          <img
-            src={props.avatar}
-            alt={`Avatar of ${props.author}`}
-            className="avatar"
-          />
           <h3>{props.author}</h3>
         </div>
         <div>

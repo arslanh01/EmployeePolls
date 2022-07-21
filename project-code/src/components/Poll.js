@@ -42,6 +42,7 @@ const Poll = (props) => {
               id="optionOne"
               name="poll"
               value="optionOne"
+              defaultChecked={question.optionOne.votes.includes(loginUser)}
               onClick={handleChange}
               disabled={answered}
             />
@@ -66,6 +67,7 @@ const Poll = (props) => {
               id="optionTwo"
               name="poll"
               value="optionTwo"
+              defaultChecked={question.optionTwo.votes.includes(loginUser)}
               onClick={handleChange}
               disabled={answered}
             />
@@ -88,7 +90,7 @@ const Poll = (props) => {
               type="submit"
               onClick={handleSubmit}
               value="Submit"
-              disabled={selection === ""}
+              disabled={selection === "" || answered}
             />
           </form>
         </div>

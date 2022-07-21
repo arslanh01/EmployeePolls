@@ -76,7 +76,11 @@ li {
 .user-detail {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 8px;
+  border: 1px solid lightblue;
+  border-radius: 16px;
 }
 .user-detail > div {
   width: 33%;
@@ -84,7 +88,11 @@ li {
 .question-detail {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 8px;
+  border: 1px solid lightblue;
+  border-radius: 16px;
 }
 .question-detail > div {
   width: 50%;
