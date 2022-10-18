@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/EmployeePolls/static/css/main.826ba2b8.css",
+    "main.js": "/EmployeePolls/static/js/main.035f8f03.js",
+    "index.html": "/EmployeePolls/index.html",
+    "main.826ba2b8.css.map": "/EmployeePolls/static/css/main.826ba2b8.css.map",
+    "main.035f8f03.js.map": "/EmployeePolls/static/js/main.035f8f03.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.826ba2b8.css",
+    "static/js/main.035f8f03.js"
+  ]
+}
